@@ -27,7 +27,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>  
 #include <cmath>
 
 #ifdef _WIN32
@@ -45,11 +44,7 @@
 #endif
 
 
-using namespace std;
-
-
-
-string deck[52] = { "2 of hearts","3 of hearts","4 of hearts","5 of hearts","6 of hearts","7 of hearts","8 of hearts","9 of hearts",
+std::string deck[52] = { "2 of hearts","3 of hearts","4 of hearts","5 of hearts","6 of hearts","7 of hearts","8 of hearts","9 of hearts",
 "10 of hearts","jack of hearts","queen of hearts","king of hearts","ace of hearts",
 "2 of diamonds","3 of diamonds","4 of diamonds","5 of diamonds","6 of diamonds","7 of diamonds","8 of diamonds","9 of diamonds",
 "10 of diamonds","jack of diamonds","queen of diamonds","king of diamonds","ace of diamonds",
@@ -61,14 +56,18 @@ string deck[52] = { "2 of hearts","3 of hearts","4 of hearts","5 of hearts","6 o
 
 int playerTotal = 0;
 int dealerTotal = 0;
-vector <string> playerDeck;
-vector <string> dealerDeck;
+std::vector<std::string> playerDeck;
+std::vector<std::string> dealerDeck;
 
 
-bool in_array(const std::string &value, const std::vector<string> &array)
+bool exists(std::string const & user_input, std::vector<std::string> const & words)
 {
-	return std::find(array.begin(), array.end(), value) != array.end();
+	for (int i = 0; i < words.size(); i++)
+		if (user_input == words[i])
+			return true;
+	return false;
 }
+
 
 //A method to make typing out print statements faster
 void print(std::string whatToPrint) {
@@ -84,35 +83,36 @@ void startingValueDealer() {
 	std::string tempCard = "";
 	for (int i = 0; i < 2; i++) {
 		tempCard = dealerDeck[i];
-		if (tempCard.find("2") != string::npos) {
+		if (tempCard.find("2") != std::string::npos) {
 			dealerTotal += 2;
 		}
-		else if (tempCard.find("3") != string::npos) {
+		else if (tempCard.find("3") != std::string::npos) {
 			dealerTotal += 3;
 		}
-		else if (tempCard.find("4") != string::npos) {
+		else if (tempCard.find("4") != std::string::npos) {
 			dealerTotal += 4;
 		}
-		else if (tempCard.find("5") != string::npos) {
+		else if (tempCard.find("5") != std::string::npos) {
 			dealerTotal += 5;
 		}
-		else if (tempCard.find("6") != string::npos) {
+		else if (tempCard.find("6") != std::string::npos) {
 			dealerTotal += 6;
 		}
-		else if (tempCard.find("7") != string::npos) {
+		else if (tempCard.find("7") != std::string::npos) {
 			dealerTotal += 7;
 		}
-		else if (tempCard.find("8") != string::npos) {
+		else if (tempCard.find("8") != std::string::npos) {
 			dealerTotal += 8;
 		}
-		else if (tempCard.find("9") != string::npos) {
+		else if (tempCard.find("9") != std::string::npos) {
 			dealerTotal += 9;
 		}
-		else if (tempCard.find("ace") != string::npos) {
+		else if (tempCard.find("ace") != std::string::npos) {
 			dealerTotal += 11;
 		}
 		else
 			dealerTotal += 10;
+		break;
 	}
 }
 
@@ -124,31 +124,31 @@ void acesAre1() {
 	bool isNotEmpty = true;
 	while (isNotEmpty) {
 		tempCard = playerDeck[i];
-		if (tempCard.find("2") != string::npos) {
+		if (tempCard.find("2") != std::string::npos) {
 			dealerTotal += 2;
 		}
-		else if (tempCard.find("3") != string::npos) {
+		else if (tempCard.find("3") != std::string::npos) {
 			dealerTotal += 3;
 		}
-		else if (tempCard.find("4") != string::npos) {
+		else if (tempCard.find("4") != std::string::npos) {
 			dealerTotal += 4;
 		}
-		else if (tempCard.find("5") != string::npos) {
+		else if (tempCard.find("5") != std::string::npos) {
 			dealerTotal += 5;
 		}
-		else if (tempCard.find("6") != string::npos) {
+		else if (tempCard.find("6") != std::string::npos) {
 			dealerTotal += 6;
 		}
-		else if (tempCard.find("7") != string::npos) {
+		else if (tempCard.find("7") != std::string::npos) {
 			dealerTotal += 7;
 		}
-		else if (tempCard.find("8") != string::npos) {
+		else if (tempCard.find("8") != std::string::npos) {
 			dealerTotal += 8;
 		}
-		else if (tempCard.find("9") != string::npos) {
+		else if (tempCard.find("9") != std::string::npos) {
 			dealerTotal += 9;
 		}
-		else if (tempCard.find("ace") != string::npos) {
+		else if (tempCard.find("ace") != std::string::npos) {
 			dealerTotal += 1;
 		}
 		else
@@ -161,37 +161,37 @@ void acesAre1() {
 
 //A method for determining the value of the users deck when aces are 11
 void acesAre11() {
-	string tempCard = "";
+	std::string tempCard = "";
 	int i = 0;
 	int index = 0;
 	bool isNotEmpty = true;
 	while (isNotEmpty) {
 		tempCard = playerDeck[i];
-		if (tempCard.find("2") != string::npos) {
+		if (tempCard.find("2") != std::string::npos) {
 			playerTotal += 2;
 		}
-		else if (tempCard.find("3") != string::npos) {
+		else if (tempCard.find("3") != std::string::npos) {
 			playerTotal += 3;
 		}
-		else if (tempCard.find("4") != string::npos) {
+		else if (tempCard.find("4") != std::string::npos) {
 			playerTotal += 4;
 		}
-		else if (tempCard.find("5") != string::npos) {
+		else if (tempCard.find("5") != std::string::npos) {
 			playerTotal += 5;
 		}
-		else if (tempCard.find("6") != string::npos) {
+		else if (tempCard.find("6") != std::string::npos) {
 			playerTotal += 6;
 		}
-		else if (tempCard.find("7") != string::npos) {
+		else if (tempCard.find("7") != std::string::npos) {
 			playerTotal += 7;
 		}
-		else if (tempCard.find("8") != string::npos) {
+		else if (tempCard.find("8") != std::string::npos) {
 			playerTotal += 8;
 		}
-		else if (tempCard.find("9") != string::npos) {
+		else if (tempCard.find("9") != std::string::npos) {
 			playerTotal += 9;
 		}
-		else if (tempCard.find("ace") != string::npos) {
+		else if (tempCard.find("ace") != std::string::npos) {
 			playerTotal += 11;
 		}
 		else
@@ -206,7 +206,7 @@ void acesAre11() {
 std::string drawCard() {
 	//Variables********************************
 	int cardNumber = 0;
-	string tempCard = "";
+	std::string tempCard = "";
 	bool cardNotUsed = true;
 	bool cardVarified = false;
 	//*****************************************
@@ -219,7 +219,7 @@ std::string drawCard() {
 		// verify that the card isn't already taken 
 		//Reset to true 
 		cardNotUsed = true;
-		if (in_array(tempCard, playerDeck) && in_array(tempCard, dealerDeck)) {
+		if (exists(tempCard, playerDeck) && exists(tempCard, dealerDeck)) {
 			cardNotUsed = false;
 		}
 		if (cardNotUsed == true)
@@ -233,10 +233,10 @@ std::string drawCard() {
 
 //A method to display the game's instructions
 void displayInstructions() {
-	cout << "The goal of the game is to get as close to 21 card points as possible. " << endl
-		<< "Having a card total of 21 points results in a win, unless the dealer also has" << endl
-		<< "21 points, they automatically lose. If both the dealer and player get over " << endl
-		<< "21 card points, it is a tie. Otherwise, whoever is closest to 21 is deemed winner." << endl;
+	std::cout << "The goal of the game is to get as close to 21 card points as possible. " << std::endl
+		<< "Having a card total of 21 points results in a win, unless the dealer also has" << std::endl
+		<< "21 points, they automatically lose. If both the dealer and player get over " << std::endl
+		<< "21 card points, it is a tie. Otherwise, whoever is closest to 21 is deemed winner." << std::endl;
 }
 
 
