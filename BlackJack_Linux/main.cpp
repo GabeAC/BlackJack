@@ -27,6 +27,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>  
 #include <cmath>
 
 #ifdef _WIN32
@@ -44,6 +45,7 @@
 #endif
 
 
+
 std::string deck[52] = { "2 of hearts","3 of hearts","4 of hearts","5 of hearts","6 of hearts","7 of hearts","8 of hearts","9 of hearts",
 "10 of hearts","jack of hearts","queen of hearts","king of hearts","ace of hearts",
 "2 of diamonds","3 of diamonds","4 of diamonds","5 of diamonds","6 of diamonds","7 of diamonds","8 of diamonds","9 of diamonds",
@@ -56,18 +58,14 @@ std::string deck[52] = { "2 of hearts","3 of hearts","4 of hearts","5 of hearts"
 
 int playerTotal = 0;
 int dealerTotal = 0;
-std::vector<std::string> playerDeck;
-std::vector<std::string> dealerDeck;
+std::vector <std::string> playerDeck;
+std::vector <std::string> dealerDeck;
 
 
-bool exists(std::string const & user_input, std::vector<std::string> const & words)
+bool in_array(const std::string &value, const std::vector<std::string> &array)
 {
-	for (int i = 0; i < words.size(); i++)
-		if (user_input == words[i])
-			return true;
-	return false;
+	return std::find(array.begin(), array.end(), value) != array.end();
 }
-
 
 //A method to make typing out print statements faster
 void print(std::string whatToPrint) {
@@ -112,7 +110,6 @@ void startingValueDealer() {
 		}
 		else
 			dealerTotal += 10;
-		break;
 	}
 }
 
@@ -219,7 +216,7 @@ std::string drawCard() {
 		// verify that the card isn't already taken 
 		//Reset to true 
 		cardNotUsed = true;
-		if (exists(tempCard, playerDeck) && exists(tempCard, dealerDeck)) {
+		if (in_array(tempCard, playerDeck) && in_array(tempCard, dealerDeck)) {
 			cardNotUsed = false;
 		}
 		if (cardNotUsed == true)
