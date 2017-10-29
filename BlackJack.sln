@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlackJack", "BlackJack\BlackJack.vcxproj", "{7EB95A3C-228D-43DE-B7FF-23A556076D9F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlackJack_Linux", "BlackJack_Linux\BlackJack_Linux.vcxproj", "{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -27,18 +25,6 @@ Global
 		{7EB95A3C-228D-43DE-B7FF-23A556076D9F}.Release|x64.Build.0 = Release|x64
 		{7EB95A3C-228D-43DE-B7FF-23A556076D9F}.Release|x86.ActiveCfg = Release|Win32
 		{7EB95A3C-228D-43DE-B7FF-23A556076D9F}.Release|x86.Build.0 = Release|Win32
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Debug|ARM.ActiveCfg = Debug|ARM
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Debug|ARM.Build.0 = Debug|ARM
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Debug|x64.ActiveCfg = Debug|x64
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Debug|x64.Build.0 = Debug|x64
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Debug|x86.ActiveCfg = Debug|x86
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Debug|x86.Build.0 = Debug|x86
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Release|ARM.ActiveCfg = Release|ARM
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Release|ARM.Build.0 = Release|ARM
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Release|x64.ActiveCfg = Release|x64
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Release|x64.Build.0 = Release|x64
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Release|x86.ActiveCfg = Release|x86
-		{E0FC2BB2-BE1E-40CA-B7C0-9A990310DECF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
