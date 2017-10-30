@@ -238,7 +238,6 @@ int main()
 	//Greet the user and get their name 
 	std::cout << "\n\nTo begin playing, first enter your name...\n";
 	std::cin >> playerName;
-	system(CLEAR);
 	while (goAgain == 0) { //begin main while loop
 						   //Make sure all values are reset
 		for (int i = 0; i < 52; i++) {
