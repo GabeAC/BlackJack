@@ -1,4 +1,4 @@
-﻿//@author: Kevin Mitchell (Original Java Program), Gabe Cummings (Converted c++ program)
+﻿//@author: KM (Original Java Program), slixxed (Converted c++ program)
 //@version: 1.3
 
 
